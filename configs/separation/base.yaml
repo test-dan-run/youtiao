@@ -1,0 +1,7 @@
+defaults:
+  - dataset: commonvoice
+  - augmentations: reverb
+  - model: convtasnet
+  - optim: adam_decay
+  - loss: si_snr
+  - orchestrator: home

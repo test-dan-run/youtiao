@@ -1,0 +1,32 @@
+name: rir_focused
+
+list:
+  - impulse_response
+  - colored_noise
+  - polarity_inversion
+  - clip_distortion
+
+configs:
+  impulse_response:
+    p: 0.9
+    local_path: '/dtln/data/wham_noise/mono/tr'
+    # local_path: /dtln/data/impulse_response
+    compensate_for_propagation_delay: true
+    convolve_mode: 'full'
+    sample_rate: 16000
+
+  polarity_inversion:
+    p: 0.5
+
+  clip_distortion:
+    p: 0.8
+    min_percent_threshold: 0
+    max_percent_threshold: 15
+
+  colored_noise:
+    p: 0.8
+    min_snr_in_db: 10
+    max_snr_in_db: 20
+    min_f_decay: -2.0
+    max_f_decay: 2.0
+    sample_rate: 16000

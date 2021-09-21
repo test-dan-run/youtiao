@@ -1,0 +1,67 @@
+name: all_transformations
+
+list:
+  - shift
+  - background_noise
+  - impulse_response
+  - polarity_inversion
+  - clip_distortion
+  - gain
+  - low_pass
+  - colored_noise
+  - reverse_overlay
+
+configs:
+  shift:
+    p: 0.5
+    min_shift: -0.1
+    max_shift: 0.1
+    shift_unit: 'fraction'
+    rollover: false
+    sample_rate: 16000
+
+  background_noise:
+    p: 0.7                # probability of applying this augmentation
+    background_paths: '/dtln/data/noises'
+    min_snr_in_db: 3      # minimum SNR
+    max_snr_in_db: 10     # maximum SNR for randomizer when adding background noise
+    sample_rate: 16000
+
+  impulse_response:
+    p: 0.9
+    ir_paths: '/dtln/data/wham_noises/tr'
+    # compensate_for_propagation_delay: false
+    convolve_mode: 'full'
+    sample_rate: 16000
+
+  polarity_inversion:
+    p: 0.5
+
+  clip_distortion:
+    p: 0.8
+    min_percent_threshold: 0
+    max_percent_threshold: 15
+
+  gain: 
+    p: 0.5
+    min_gain_db: -12
+    max_gain_db: 12
+
+  low_pass:
+    p: 0.5
+    min_cutoff_freq: 150
+    max_cutoff_freq: 7500
+    sample_rate: 16000
+
+  colored_noise:
+    p: 0.8
+    min_snr_in_db: 10
+    max_snr_in_db: 20
+    min_f_decay: -2.0
+    max_f_decay: 2.0
+    sample_rate: 16000
+
+  reverse_overlay:
+    p: 0.5
+    min_snr_in_db: 10
+    max_snr_in_db: 20

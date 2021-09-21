@@ -1,0 +1,6 @@
+defaults:
+  - dataset: commonvoice
+  - augmentations: reverb
+  - model: ???
+  - optim: ???
+  - run: ???

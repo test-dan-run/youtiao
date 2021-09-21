@@ -1,0 +1,10 @@
+# ReduceLROnPlateau
+optim: adam
+scheduler: decay
+mode: min
+lr: 5e-5
+factor: 0.5
+patience: 5
+cooldown: 0
+eps: 0
+interval: epoch

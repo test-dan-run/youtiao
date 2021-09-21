@@ -1,0 +1,8 @@
+optim: adam
+scheduler: cyclic
+mode: 'triangular' #'triangular2' , 'exp_range'
+lr: 1e-4
+max_lr: 1e-2
+epoch_size_up: 5 #epoch , not step
+epoch_size_down: 5 #epoch, not step
+interval: epoch

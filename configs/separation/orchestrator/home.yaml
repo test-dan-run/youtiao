@@ -1,0 +1,13 @@
+batch_size: 32
+num_workers: 8
+pin_memory: false
+save_top_k: 2
+gradient_clip_val: 3.0
+logs_dir: /dtln/logs
+ckpt_dir: /dtln/checkpoints
+num_gpus: 1
+accelerator: 'ddp'
+distributed: false
+max_epochs: 100
+log_audio_every_x_epoch: 1
+log_audio_every_x_batch: 5

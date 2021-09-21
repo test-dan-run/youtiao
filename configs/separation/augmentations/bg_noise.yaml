@@ -1,0 +1,38 @@
+name: bg_focused
+
+list:
+  - background_noise
+  - colored_noise
+  - polarity_inversion
+  - low_pass
+  - clip_distortion
+
+configs:
+  background_noise:
+    p: 0.7                # probability of applying this augmentation
+    local_path: '/dtln/data/noises'
+    min_snr_in_db: 3      # minimum SNR
+    max_snr_in_db: 10     # maximum SNR for randomizer when adding background noise
+    sample_rate: 16000
+
+  colored_noise:
+    p: 0.8
+    min_snr_in_db: 10
+    max_snr_in_db: 20
+    min_f_decay: -2.0
+    max_f_decay: 2.0
+    sample_rate: 16000
+
+  polarity_inversion:
+    p: 0.5
+
+  low_pass:
+    p: 0.5
+    min_cutoff_freq: 150
+    max_cutoff_freq: 7500
+    sample_rate: 16000
+
+  clip_distortion:
+    p: 0.8
+    min_percent_threshold: 0
+    max_percent_threshold: 15

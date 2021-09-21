@@ -1,0 +1,5 @@
+data_dir: /dtln/data/processed/asr/CommonVoice_EN
+train_path: ${.data_dir}/train
+valid_path: ${.data_dir}/valid
+segment_length_seconds: 5
+sample_rate: 16000
