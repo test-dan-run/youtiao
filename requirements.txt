@@ -1,0 +1,14 @@
+# audio processing
+torch-audiomentations==0.8.0
+webrtcvad==2.0.10
+pystoi==0.3.3
+
+# experiment logging
+hydra-core==1.1.0
+pytorch-lightning==1.4.4
+# clearml==1.1.0
+
+# visualisation
+matplotlib==3.3.4
+pandas==1.1.5
+seaborn==0.11.1
