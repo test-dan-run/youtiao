@@ -59,22 +59,6 @@ class ConvTasNet(nn.Module):
         est_source = F.pad(est_source, (0, T_origin - T_conv))
         return est_source
 
-    @classmethod
-    def load_model(cls, path):
-        # Load to CPU
-        package = torch.load(path, map_location=lambda storage, loc: storage)
-        model = cls.load_model_from_package(package)
-        return model
-
-    @classmethod
-    def load_model_from_package(cls, package):
-        model = cls(package['N'], package['L'], package['B'], package['H'],
-                    package['P'], package['X'], package['R'], package['C'],
-                    norm_type=package['norm_type'], causal=package['causal'],
-                    mask_nonlinear=package['mask_nonlinear'])
-        model.load_state_dict(package['state_dict'])
-        return model
-
     @staticmethod
     def serialize(model, optimizer, epoch, tr_loss=None, cv_loss=None):
         package = {
